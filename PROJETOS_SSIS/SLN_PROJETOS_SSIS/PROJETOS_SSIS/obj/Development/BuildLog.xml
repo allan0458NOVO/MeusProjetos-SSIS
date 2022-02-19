@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>PROJETOS_SSIS</Name>
-    <LastWriteTime>2022-02-18T18:51:31.818264Z</LastWriteTime>
+    <LastWriteTime>2022-02-19T12:18:07.0341844Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>25_DynamicConnectionManagerDemo.dtsx</Name>
-      <LastWriteTime>2022-02-18T18:51:31.803273Z</LastWriteTime>
+      <LastWriteTime>2022-02-19T12:34:47.475897Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
