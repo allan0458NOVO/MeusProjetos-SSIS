@@ -1,0 +1,255 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/5/2022 11:02:31 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="COMP-PC"
+  DTS:CreatorName="COMP-PC\Usuario"
+  DTS:DTSID="{1A0549AA-E958-4EF1-A93B-D80C11DB24E0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="27_PrecedenceConstraintsDemo"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{A5F92BE2-30B0-4604-945A-903C108D72B6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Executar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{74509F74-DB45-486B-9659-75F41E7BCDB7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Executar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3080F4BB-438D-4C3D-AA11-CCF826166B9B}"
+          SQLTask:SqlStatementSource="select 1/cast(2*rand() as int) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Executar SQL 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{6D240F3C-B022-49AD-BBA6-22B880507C71}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Executar SQL 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3080F4BB-438D-4C3D-AA11-CCF826166B9B}"
+          SQLTask:SqlStatementSource="select 1/cast(2*rand() as int) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Script"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Tarefa Script"
+      DTS:DTSID="{022E995A-D0B6-4367-9A9C-9146F5CC000B}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Script"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_6cc0bdcc00454ceab67c7f514256b2e8"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Script 1"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Tarefa Script"
+      DTS:DTSID="{E57F7C19-1C70-48D3-BD6B-95A429AB2FEE}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Script 1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_a00193a805ba4545a0c55f807f149a85"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{2FF9BCA6-A091-4FC9-B41D-28D6BE662A98}"
+      DTS:From="Package\Tarefa Executar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Tarefa Script" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C08C2A00-9A11-41C6-9D6C-2D516E6E0F3C}"
+      DTS:From="Package\Tarefa Executar SQL"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\Tarefa Script 1"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{17E8EFCA-A0E9-49D5-8877-544F1885E30D}"
+      DTS:From="Package\Tarefa Executar SQL 1"
+      DTS:ObjectName="Restrição 2"
+      DTS:To="Package\Tarefa Script 1"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Tarefa Executar SQL"
+          TopLeft="126.928573496488,123.264707533959" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Tarefa Executar SQL 1"
+          TopLeft="440.500007408006,134.735295930123" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Tarefa Script"
+          TopLeft="18.5714288876981,341.823534205711" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Tarefa Script 1"
+          TopLeft="270.714290324523,342.588240098788" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="186.661906829821,164.864707533958">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.8904779421229,176.958826671752"
+              Start="0,0"
+              End="-98.8904779421229,169.458826671752">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.7443930759683" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67.7443930759683"
+                    Point2="0,71.7443930759683"
+                    Point3="-4,71.7443930759683" />
+                  <mssgle:LineSegment
+                    End="-94.8904779421229,71.7443930759683" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.8904779421229,71.7443930759683"
+                    Point2="-98.8904779421229,71.7443930759683"
+                    Point3="-98.8904779421229,75.7443930759683" />
+                  <mssgle:LineSegment
+                    End="-98.8904779421229,169.458826671752" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="242.395240163154,164.864707533958">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.319050161368,177.72353256483"
+              Start="0,0"
+              End="102.319050161368,170.22353256483">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.0544276823926" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68.0544276823926"
+                    Point2="0,72.0544276823926"
+                    Point3="4,72.0544276823926" />
+                  <mssgle:LineSegment
+                    End="98.3190501613684,72.0544276823926" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.3190501613684,72.0544276823926"
+                    Point2="102.319050161368,72.0544276823926"
+                    Point3="102.319050161368,76.0544276823926" />
+                  <mssgle:LineSegment
+                    End="102.319050161368,170.22353256483" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="39.0511657056842,77.0544276823926,24.21671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2]"
+          TopLeft="532.500007408006,176.335295930123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.45238375015,166.252944168665"
+              Start="0,0"
+              End="-164.45238375015,158.752944168665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.4496080344694" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.4496080344694"
+                    Point2="0,60.4496080344694"
+                    Point3="-4,60.4496080344694" />
+                  <mssgle:LineSegment
+                    End="-160.45238375015,60.4496080344694" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-160.45238375015,60.4496080344694"
+                    Point2="-164.45238375015,60.4496080344694"
+                    Point3="-164.45238375015,64.4496080344694" />
+                  <mssgle:LineSegment
+                    End="-164.45238375015,158.752944168665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.334551250075,65.4496080344694,24.21671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

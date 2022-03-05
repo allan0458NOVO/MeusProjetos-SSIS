@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Usuario\Desktop\CURSOS\UDEMY\Mastering SQL Server 2016 Integration Services (SSIS)\OutputFiles\Productis_93448.txt">
+          DTS:ConnectionString="C:\Users\Usuario\Desktop\CURSOS\UDEMY\Mastering SQL Server 2016 Integration Services (SSIS)\OutputFiles\Productis_12332.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
