@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">COMP-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOWBoOgo79UKrTMcR4weRYQAAAAACAAAAAAAQZgAAAAEAACAAAABbU4z/9BTlELgkbnuVbZEh5+IJgA4xMUo3dg2XUNLljQAAAAAOgAAAAAIAACAAAAAvhFIN3v5cn8LDWjUJinBLaUDC6Yp1nZrbYVrereLcZpAAAAB/pueftXVe1asigN3f09lzJhHW84ldUV6qrAuHRbSG9PpR2hjW2yrpJtbGM9QUfSPMBGLbiiVpprUWXkEWk5Cu/TW3KkAJW5dUwB0S1123KvswFt2NLvMeVYqgcg9iCHA2sBvuM7vV9UtLPPgT3llykvL9JS9BjxDgEuTU9iFrH7cShCARp2C2quKZT+ZumFVAAAAAj0GyvrS1tIrMNXpzaxI0yUOF9cUaVeGNHj08+Cehr3VNge2vbtR3TJOFNZvdhECLHcZLysH7u7VJMc4L+1NTsw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOWBoOgo79UKrTMcR4weRYQAAAAACAAAAAAAQZgAAAAEAACAAAABvmK2qjSnhJ8CkVYn4rJ+jbYKThBXiJoPKUSnHaSkjEwAAAAAOgAAAAAIAACAAAAAY2y16SoDIDbNwjLLYfy5fujgm5iRX/OAZQmxQZzDGyJAAAADJyADQwknjqBZ99lqTonYebtWjr7vpNvOKpcJ0O7blxJUGWy/m4Osp4Ojk8y+OgFNREYDq/lhIS7hOdzo8J9BuCLCMbzwgLpo2KgAPbaO6tb6gOJBbxhTIdH028U4A2A6zHNoNlYn9pSsmBIjK35s5QXDBC9hW5fc23OouSgFjSMMJU+ULTbgPWyk0oVxMnxBAAAAAF8Jr5I589wnLXnsFHgDQ7+JGoAPtAmqNoQuMODH2j+qHfxKuwmjlfg9RgxTzczh7GWZY+lLLbaQw1L0BRnYl+g==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,6 +34,7 @@
           <SSIS:Package SSIS:Name="26_DynamicTasksDemo.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="27_PrecedenceConstraintsDemo.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="28_EventDemos.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="29_LogProvidersDemo.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LocalHost.AdventureWorks2014.conmgr" />
@@ -735,6 +736,84 @@
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="29_LogProvidersDemo.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{6A633BC8-0652-4DA6-95DD-2D73726A68EA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">29_LogProvidersDemo</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2522D373-9619-4B20-A939-2C954BD86A1B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.TextLog.txt.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.TextLog.txt.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Usuario\Desktop\CURSOS\UDEMY\Mastering SQL Server 2016 Integration Services (SSIS)\OutputFiles\TextLog.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.XMLLog.xml.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.XMLLog.xml.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Usuario\Desktop\CURSOS\UDEMY\Mastering SQL Server 2016 Integration Services (SSIS)\OutputFiles\XMLLog.xml</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

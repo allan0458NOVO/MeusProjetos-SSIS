@@ -1,0 +1,148 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/5/2022 2:55:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="COMP-PC"
+  DTS:CreatorName="COMP-PC\Usuario"
+  DTS:DTSID="{6A633BC8-0652-4DA6-95DD-2D73726A68EA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="29_LogProvidersDemo"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{79682D80-7535-479A-A082-C501780A13CB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TextLog.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{6DB62540-07B5-4180-9931-828039CA2955}"
+      DTS:ObjectName="TextLog.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Usuario\Desktop\CURSOS\UDEMY\Mastering SQL Server 2016 Integration Services (SSIS)\OutputFiles\TextLog.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[XMLLog.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{613ABFCA-C917-44DB-BCE9-DF39BB4AAB88}"
+      DTS:ObjectName="XMLLog.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Usuario\Desktop\CURSOS\UDEMY\Mastering SQL Server 2016 Integration Services (SSIS)\OutputFiles\XMLLog.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="TextLog.txt"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Grava entradas no log de eventos em um arquivo CSV"
+      DTS:DTSID="{3C2DD2C3-3B3B-46D4-B04F-267AB7E43C6F}"
+      DTS:ObjectName="Provedor de log SSIS log para arquivos de Texto">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+    <DTS:LogProvider
+      DTS:ConfigString="XMLLog.xml"
+      DTS:CreationName="Microsoft.LogProviderXMLFile"
+      DTS:Description="Grava entradas no log de eventos em um arquivo XML"
+      DTS:DTSID="{4472A998-FFF4-4AD4-8517-AFADF9480DFC}"
+      DTS:ObjectName="Provedor de log SSIS log para arquivos XML">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+    <DTS:LogProvider
+      DTS:CreationName="Microsoft.LogProviderEventLog"
+      DTS:Description="Grava entradas no Log de Eventos"
+      DTS:DTSID="{1026A2D1-99E2-4035-8D03-376270DD57CB}"
+      DTS:ObjectName="Provedor de log SSIS para o Log de Eventos do Windows">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{3C2DD2C3-3B3B-46D4-B04F-267AB7E43C6F}" />
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{4472A998-FFF4-4AD4-8517-AFADF9480DFC}" />
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{1026A2D1-99E2-4035-8D03-376270DD57CB}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Executar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{22A5C9AD-FE8A-463E-89EC-5D69DF23517D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Executar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3080F4BB-438D-4C3D-AA11-CCF826166B9B}"
+          SQLTask:SqlStatementSource="select 1/0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Tarefa Executar SQL"
+          TopLeft="384.785720744912,132.44117825089" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
